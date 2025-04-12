@@ -4,7 +4,6 @@ const require = createRequire(import.meta.url);
 const { serve } = require("@upstash/workflow/express");
 import Subscription from "../models/subscription.model.js";
 import { sendReminderEmail } from "../utills/send-email.js";
-import { now } from "mongoose";
 
 const REMINDERS = [7, 5, 2, 1];
 

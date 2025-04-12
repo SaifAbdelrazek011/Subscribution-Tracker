@@ -60,7 +60,7 @@ export const signIn = async (req, res, next) => {
 
     if (!user) {
       const error = new Error("User not found");
-      error.statusCode = 401; // Unauthorized
+      error.statusCode = 401;
       throw error;
     }
 
@@ -68,7 +68,7 @@ export const signIn = async (req, res, next) => {
 
     if (!isPasswordValid) {
       const error = new Error("Invalid password");
-      error.statusCode = 401; // Unauthorized
+      error.statusCode = 401;
       throw error;
     }
 
