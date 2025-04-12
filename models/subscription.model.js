@@ -38,6 +38,7 @@ const subscriptionSchema = new mongoose.Schema(
         "Food",
         "Transportation",
         "Health",
+        "Productivity",
         "Other",
       ],
       default: "other",

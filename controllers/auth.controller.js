@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import bcrypt, { hash } from "bcryptjs";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
 import User from "../models/user.model.js";
@@ -17,7 +17,7 @@ export const signUp = async (req, res, next) => {
 
     if (existingUser) {
       const error = new Error("User already exists");
-      error.statusCode = 409; // Conflict
+      error.statusCode = 409;
       throw error;
     }
 
@@ -46,7 +46,7 @@ export const signUp = async (req, res, next) => {
       },
     });
   } catch (error) {
-    await session.aboutTransaction();
+    await session.abortTransaction();
     session.endSession();
     next(error);
   }
