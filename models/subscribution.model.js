@@ -33,12 +33,12 @@ const subscriptionSchema = new mongoose.Schema(
       required: [true, "Subscription category is required"],
       trim: true,
       enum: [
-        "entertainment",
-        "utilities",
-        "food",
-        "transportation",
-        "health",
-        "other",
+        "Entertainment",
+        "Utilities",
+        "Food",
+        "Transportation",
+        "Health",
+        "Other",
       ],
       default: "other",
     },
@@ -110,6 +110,6 @@ subscriptionSchema.pre("save", function (next) {
   next();
 });
 
-const subscription = mongoose.model("Subscription", subscriptionSchema);
+const Subscription = mongoose.model("Subscription", subscriptionSchema);
 
-export default subscription;
+export default Subscription;
